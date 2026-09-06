@@ -626,7 +626,7 @@ seolhee:{
          {w:"신호준",t:"저장해도 되냐...?"},{w:"백승재",t:"설희 오늘 지대"},
          {w:"진성고 애들",t:"소문 듣고 왔는데 진짜네"},{w:"익명",t:"뽀샵 아니냐 ㅡ,.ㅡ"},
          {w:"강다솜",t:"우리 설희 최고 ^ㅇ^"}]},
-    {src:"img/photo_seolhee_3.webp", cap:"혼자 찍어봄 ^3^", dt:"2004.03.16", cn:21,
+    {src:"img/photo_seolhee_3.webp", cap:"혼자 찍어봄 ^3^", dt:"2004.10.21", cn:21,
      cm:[{w:"박미나",t:"그 폰줄 어디꺼야 ㅠ0ㅠ"},{w:"서지연",t:"화장실에서 몇분을 있었냐 ㅡ_ㅡ"},
          {w:"신호준",t:"잘 어울린다 ^^"},{w:"익명",t:"거울에 낙서한거 니가 쓴거지"}]}
   ],
@@ -697,7 +697,7 @@ suhyun:{
     {src:"img/photo_suhyun_3.webp", cap:"우리반 창가 ^_^", dt:"2004.03.12", cn:3,
      cm:[{w:"조현우",t:"우리 자리다 ^ㅇ^"},
          {w:"강다솜",t:"야 뭘 그렇게 보고 있냐 -0-"}]},
-    {src:"img/photo_suhyun_4.webp", cap:"스티커 사진 뽑았다 >ㅁ<", dt:"2004.03.13", cn:8,
+    {src:"img/photo_suhyun_4.webp", cap:"스티커 사진 뽑았다 >ㅁ<", dt:"2004.04.15", cn:8,
      cm:[{w:"서지연",t:"나랑 같이 찍기로 해놓고 ㅜ_ㅜ"},
          {w:"강다솜",t:"이거 다이어리에 붙여줘 ^-^"},
          {w:"조현우",t:"밑에 낙서 니가 한거지 -0-"}]}
@@ -798,8 +798,9 @@ function viewDiary(c){
 
 function viewPhoto(c){
   if(!c.photo.length) return `<div class="sec"><h3>사진첩</h3><em>0</em></div><p class="none">등록된 사진이 없습니다</p>`;
+  const ps=c.photo.slice().sort((a,b)=>(b.dt||"").localeCompare(a.dt||""));
   return `<div class="sec"><h3>사진첩</h3><em>${c.photo.length}</em></div>` +
-    c.photo.map((p,i)=>{
+    ps.map((p,i)=>{
       const cm=p.cm||[], total=p.cn||cm.length;
       const rest=total-cm.length;
       return `<div class="pi">${slot("s-photo",p.src,"사진")}
