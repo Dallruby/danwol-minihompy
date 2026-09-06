@@ -98,6 +98,22 @@ input{font:inherit}
 .i-btn:active{transform:translateY(1px)}
 .boot{margin-top:17px;font-family:Verdana,Geneva,sans-serif;font-size:8.5px;
   letter-spacing:2.5px;color:#a5b7e6;min-height:13px}
+.i-crack{margin-top:16px;display:inline-flex;flex-direction:column;align-items:center;gap:3px;
+  padding:9px 24px;border-radius:999px;text-decoration:none;
+  border:1px solid #c2d1f5;background:rgba(255,255,255,.72);
+  color:#3a5db8;font-size:11px;font-weight:bold;letter-spacing:-.2px}
+.i-crack em{font-family:Verdana,Geneva,sans-serif;font-style:normal;font-size:7.5px;
+  letter-spacing:2px;color:#93a6d8;text-transform:uppercase}
+.i-crack:hover{border-color:#8fa8e6;background:#fff}
+.i-crack:active{transform:translateY(1px)}
+.crackcta{display:flex;flex-direction:column;align-items:center;gap:3px;
+  margin-top:13px;padding:11px 10px;border-radius:3px;text-decoration:none;
+  background:linear-gradient(135deg,var(--accent,#3e7bb0),var(--accent2,#6fa5cf));
+  color:#fff;box-shadow:0 2px 7px rgba(0,0,0,.13)}
+.crackcta b{font-size:11.5px;letter-spacing:-.3px}
+.crackcta em{font-family:Verdana,Geneva,sans-serif;font-style:normal;font-size:8px;
+  letter-spacing:1.6px;opacity:.86}
+.crackcta:active{transform:translateY(1px)}
 
 @media (prefers-reduced-motion:no-preference){
   .badge{animation:rise .72s .04s cubic-bezier(.22,1,.36,1) both}
@@ -107,6 +123,7 @@ input{font:inherit}
   .i-sub{animation:rise .72s .58s cubic-bezier(.22,1,.36,1) both}
   .i-btn{animation:rise .72s .7s cubic-bezier(.22,1,.36,1) both}
   .boot{animation:rise .72s .84s cubic-bezier(.22,1,.36,1) both}
+.i-crack{animation:rise .72s .96s cubic-bezier(.22,1,.36,1) both}
   .spark{animation:tw 3.6s ease-in-out infinite}
   .s1{animation-delay:1.3s}.s2{animation-delay:2.2s}.s3{animation-delay:3.1s}
   .s4{animation-delay:1.8s}.s5{animation-delay:2.7s}
@@ -351,6 +368,8 @@ input{font:inherit}
     <p class="i-sub">누구의 방명록부터 열어볼까<br><b>Dallruby</b></p>
     <button class="i-btn" id="enter" type="button">내 미니홈피 가기</button>
     <p class="boot" id="boot"></p>
+    <a class="i-crack" href="https://share.crack.wrtn.ai/kerzqaq" target="_blank" rel="noopener">
+      본편 읽으러 가기<em>crack</em></a>
   </div>
 </div>
 
@@ -761,7 +780,9 @@ function viewHome(c){
     <div class="sec"><h3>일촌평</h3><em>${c.ilchon.length}</em></div>
     ${ic}
     <p class="tally">다이어리 <b>${c.diary.length}</b> · 사진첩 <b>${c.photo.length}</b> · 방명록 <b>${c.guest.length}</b> · 일촌 <b>${c.ilchon.length}</b></p>
-    ${c.skinName?`<p class="skinname">${esc(c.skinName)}</p>`:""}`;
+    ${c.skinName?`<p class="skinname">${esc(c.skinName)}</p>`:""}
+    ${c.mine?`<a class="crackcta" href="https://share.crack.wrtn.ai/kerzqaq" target="_blank" rel="noopener">
+      <b>본편 읽으러 가기</b><em>crack &middot; 그놈들은 오늘도 멋있었다</em></a>`:""}`;
 }
 
 function viewDiary(c){
