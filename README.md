@@ -10,15 +10,17 @@
 ```
 index.html   전체 (스타일 · 마크업 · 스크립트)
 bgm/         인물별 BGM 5개 (you · junrae · wonho · seolhee · suhyun)
-img/         미니룸 · 사진첩 이미지. 현재 비어 있음 — 아래 이름대로 넣으면 자동으로 붙는다
+img/         미니룸 5개 · 사진첩 11장 (webp)
 ```
 
+아직 안 들어간 것은 YOU 사진 2장뿐이다. 아래 이름 그대로 `img/` 에 넣으면 자동으로 붙는다.
+
 ```
-img/miniroom_user.png  miniroom_junrae.png  miniroom_wonho.png  miniroom_seolhee.png  miniroom_suhyun.png
-img/photo_user_1~2.jpg  photo_wonho_1~3.jpg  photo_seolhee_1~6.jpg  photo_suhyun_1~2.jpg
+img/photo_user_1.webp   img/photo_user_2.webp
 ```
 
-전부 가로 4:3 권장. 마준래는 사진첩 0장이 정상.
+파일이 없으면 회색 자리 표시가 대신 떠서 레이아웃은 안 무너진다.
+마준래는 사진첩 0장이 정상 (캐릭터 코드).
 
 ## 로컬 실행
 
